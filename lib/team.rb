@@ -35,4 +35,10 @@ class Team
     "{total_value => #{total_value}, player_count => #{player_count}}"
   end
 
+  def average_cost_of_player
+    average_cost = total_value / player_count.to_f
+    "$#{format('%.f', average_cost).gsub(/(\d)(?=(\d\d\d)+(?!\d))/, '\1,')}"
+  end
+
+
 end
