@@ -40,5 +40,18 @@ class Team
     "$#{format('%.f', average_cost).gsub(/(\d)(?=(\d\d\d)+(?!\d))/, '\1,')}"
   end
 
+  def players_by_last_name
+    players_hash = {}
+
+    @players.each do |player|
+      players_hash[player.last_name] = [] unless players_hash.key?(player.last_name)
+      players_hash[player.last_name] << player.first_name
+    end
+
+    players_hash = players_hash.sort.to_h
+
+    # Didn't finish this part -- ran out of time while researching Hash
+
+  end
 
 end
